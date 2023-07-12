@@ -1,0 +1,26 @@
+version: '3'
+services:
+  database:
+    image: mariadb:10.4.31
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: photobook
+      MARIADB_USER: admin
+      MARIADB_PASSWORD: admin
+      MARIADB_CHARACTER_SET_SERVER: utf8mb4
+      MARIADB_COLLATION_SERVER: utf8mb4_unicode_ci
+      TZ: Asia/Tokyo
+    tty: true
+    healthcheck:
+      test: ["CMD", "mysql", "-uadmin", "-padmin", "-e", "use photobook"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s # sleep の分だけ遅延させる
+  app:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      database:
+        condition: service_healthy

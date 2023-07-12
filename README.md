@@ -1,1 +1,3 @@
-# FlaskSample2023
+# InstaSample2023
+
+インスタのAPIを使うためのサンプルコード
