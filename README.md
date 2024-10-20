@@ -1,3 +1,3 @@
-# InstaSample2023
+# InstagramAPI Sample
 
 インスタのAPIを使うためのサンプルコード
