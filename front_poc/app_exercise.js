@@ -36,7 +36,8 @@ function displayPhotos(photos) {
     // 取得した写真を一つずつ処理
     photos.forEach(photo => {
         // TODO: img要素を作成し、写真のURLを設定するコードを書く
-        // ヒント: document.createElement 関数を使用して img 要素を作成し、
-        // src 属性に photo.media_url を設定する
+        // ヒント1. document.createElement 関数を使用して img 要素を持つ変数を作成します。
+        // ヒント2. 作成した変数の src 属性に photo.media_url を設定します。
+        // ヒント3. photosDiv の appendChild 関数を使って作成した変数を追加します。
     });
 }
